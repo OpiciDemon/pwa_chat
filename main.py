@@ -111,4 +111,5 @@ def handle_user_logout(user):
     socketio.emit("user_loggedout", str(user["data"]))
 
 if __name__ == "__main__":
+    from os import environ
     socketio.run(app, debug=False, host="0.0.0.0", port=environ.get("PORT", 5000))
